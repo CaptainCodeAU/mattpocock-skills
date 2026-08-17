@@ -30,11 +30,11 @@ What the tracker no longer has to provide is native dependency links. Blocking i
 
 ## The map, the answer key, and the frontier
 
-An effort is **two issues**, and no more.
+An effort is **two documents**, and no more — two issues on a real tracker, or `map.md` and `answers.md` under `.scratch/<effort>/` on the local-markdown one.
 
-The **map** is a single issue labelled `wayfinder:map`, and it holds what is still open. The property that matters: **it only ever shrinks.** Answering a question deletes it from the map, so the map is finished when no questions are left on it.
+The **map** holds what is still open; on a tracker it is an issue labelled `wayfinder:map`. The property that matters: **it only ever shrinks.** Answering a question deletes it from the map, so the map is finished when no questions are left on it.
 
-The **answer key** is a single issue labelled `wayfinder:answers`, linked from the map. Each answered question is appended to it as one comment carrying the question, the answer, and links to whatever got built along the way. It is append-only, and it is the source of truth for what has been answered — a question counts as answered when, and only when, it has an entry there.
+The **answer key** is linked from the map, and on a tracker it is an issue labelled `wayfinder:answers`. Each answered question is appended to it — one comment, or one entry in the file — carrying the question, the answer, and links to whatever got built along the way. It is append-only, and it is the source of truth for what has been answered — a question counts as answered when, and only when, it has an entry there.
 
 That split is what keeps a long effort cheap. The map never grows, so loading it costs the same in session forty as in session one; the answer key grows without bound, and you read only the entries you need.
 
@@ -85,9 +85,9 @@ A real and repeatedly-reported outcome, verbatim from a field report. Wayfinder'
 The frontier is built to show you what is takeable, and blocking edges are there so parallel work is safe on paper. In practice one-at-a-time is the safer default, and there is now a second reason for it: the map is a single document, so two sessions claiming or deleting questions at the same moment can clobber each other's edit. The answer key cannot be clobbered — appending an entry is safe from any number of sessions at once, which is precisely why parallel research works — but the map can. Beyond that, users working two grilling questions at once get asked in one session a question they just answered in the other, because the sessions share no [context](https://www.aihero.dev/ai-coding-dictionary/context). There is also a known gap on prototype questions: an agent has been reported building three UI variations, choosing one itself, and writing its own answer into the key — the selection is yours to make, and the skill does not currently say so loudly enough. If you do run in parallel, review the blocking edges yourself first.
 
 **Do I have to use GitHub Issues?**
-No — any issue tracker works, and they are now all equal. Wayfinder needs nothing more than the ability to create two issues and append a comment to one of them, so GitHub's native sub-issues and dependency links have stopped being load-bearing and a tracker without them is no longer second-class. GitLab, Linear, Jira, Gitea and local markdown all get used.
+No — any issue tracker works, and they are now all equal. Wayfinder needs nothing more than somewhere to keep two documents and a way to append to one of them, so GitHub's native sub-issues and dependency links have stopped being load-bearing and a tracker without them is no longer second-class. GitLab, Linear, Jira, Gitea and local markdown all get used.
 
-One caveat survives: local markdown puts the artifacts in your repo, which tends to lead to accidental persistence. What used to push open-source maintainers toward it — public trackers filling with agent-generated planning tickets — is a much smaller problem now, because an effort is two issues rather than one plus one per question.
+One caveat survives: local markdown puts the artifacts in your repo, which tends to lead to accidental persistence. What used to push open-source maintainers toward it — public trackers filling with agent-generated planning tickets — is a much smaller problem now, because an effort is two documents rather than one plus one per question.
 
 **The grilling is exhausting. Every question is three paragraphs long.**
 This is the sharpest live complaint about wayfinder and it is not resolved. The decomposition one user gave: the verbosity itself causes decision exhaustion, and the length strips out *why* a question is being asked, so you lose the chain from decision to decision as the map gets longer. The verbosity looks like a property of the current set of [models](https://www.aihero.dev/ai-coding-dictionary/model) rather than of the skill, and no fix has landed. Practitioner mitigations in circulation: run a lower [reasoning effort](https://www.aihero.dev/ai-coding-dictionary/effort), and put a plain-language instruction in your global `CLAUDE.md`. Expect to spend real thought here regardless — the amount of thinking wayfinder demands from you is not a defect, it is most of what it is for.
@@ -108,7 +108,7 @@ The unit has since been renamed as well. It used to be a **decision ticket**, a 
 ## It's working if
 
 - The destination is written down and agreed before a single question exists.
-- Your tracker gains exactly two issues for the whole effort. An issue per question means the skill is running the old shape.
+- The whole effort produces exactly two documents — two issues on a tracker, or `map.md` and `answers.md` on local markdown. One artifact per question means the skill is running the old shape.
 - Every open entry reads as a question. Anything that reads "build the X" is either mis-typed or belongs downstream of the map.
 - The map gets shorter, not longer. Questions leave it as they are answered, and the effort is over when **Open questions** is empty.
 - A session answers one question: it appends an entry to the answer key, *then* deletes that question from the map. In that order. Then it stops.

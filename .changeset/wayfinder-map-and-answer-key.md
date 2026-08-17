@@ -2,7 +2,7 @@
 "cc-skills": minor
 ---
 
-**Breaking:** a `/wayfinder` effort is now **two issues** — a **map** and an **answer key** — instead of one map plus a child issue per unit. The unit is a **question**, and "decision ticket" is retired.
+**Breaking:** a `/wayfinder` effort is now **two documents** — a **map** and an **answer key**, two issues on a real tracker or two files on the local-markdown one — instead of one map plus a child issue per unit. The unit is a **question**, and "decision ticket" is retired.
 
 The map holds what is still open: the destination, the notes, a link to the answer key, and the numbered **open questions**, each carrying a `type:` field and a `blocked by:` field. The answer key holds what has been settled, one appended entry per answered question. Answering a question deletes it from the map, so **the map only ever shrinks and the effort is over when it is empty** — a completion signal the previous shape didn't have.
 

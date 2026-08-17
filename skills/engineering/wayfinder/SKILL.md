@@ -14,11 +14,11 @@ Wayfinder is **planning** by default: each question resolves to a decision, and 
 
 ## Refer by name
 
-Every question carries a number and a title. In everything the human reads — narration, the answer key — refer to it as `Q7 — Which auth provider?`, never a bare `Q7`. A wall of `Q4, Q5, Q6` is illegible; titles read at a glance. The number doesn't vanish — it's what blocking edges and answer-key entries line up on — but it rides *inside* the name, never stands in for it. The map and the answer key are issues, so they have titles too; name them the same way.
+Every question carries a number and a title. In everything the human reads — narration, the answer key — refer to it as `Q7 — Which auth provider?`, never a bare `Q7`. A wall of `Q4, Q5, Q6` is illegible; titles read at a glance. The number doesn't vanish — it's what blocking edges and answer-key entries line up on — but it rides *inside* the name, never stands in for it. The map and the answer key carry names too — an issue title, or a file path; use them the same way.
 
 ## The map and the answer key
 
-An effort is **two** issues, and no more. The **map** holds what is still open. The **answer key** holds what has been settled.
+An effort is **two** documents, and no more. The **map** holds what is still open. The **answer key** holds what has been settled.
 
 | | The map | The answer key |
 | --- | --- | --- |
@@ -29,7 +29,7 @@ An effort is **two** issues, and no more. The **map** holds what is still open. 
 
 That split is what keeps the map cheap to load however long the effort runs. **The answer key is the source of truth for what has been answered**; the map's open-question list is a cache of what has not. A question is answered when, and only when, it has an answer-key entry.
 
-**Where the two live, and how an entry is appended, is tracker-specific.** The issue tracker should have been provided to you. If not, tell the user to run `/setup-matt-pocock-skills`. Consult the tracker doc's "Wayfinding operations" section for how _this_ repo expresses them. If no tracker has been provided, default to the local-markdown tracker.
+**Whether the two are issues or files, and how an entry is appended, is tracker-specific.** Consult the tracker doc's "Wayfinding operations" section for how _this_ repo expresses them. If no tracker has been provided, say so, name `/setup-matt-pocock-skills` as the way to configure one, and carry on with the local-markdown tracker unless the user redirects you — a repo with no tracker configured still gets a map.
 
 ### The map body
 
@@ -135,7 +135,7 @@ User invokes with a loose idea.
 
 1. **Name the destination.** Call the Skill tool twice, for "grilling" and "domain-modeling", to pin down what this map is finding its way to — the spec, decision, or change. The destination fixes the scope, so it's settled first.
 2. **Map the frontier.** Grill again, **breadth-first** this time: fan out across the whole space rather than deep on any one thread, surfacing the open decisions and the first steps takeable now. **If this surfaces no fog** — the way to the destination is already clear, the whole journey small enough for one session — you don't need a map. Stop and ask the user how they'd like to proceed.
-3. **Create the two issues**: the map, with Destination and Notes filled in and the fog sketched into **Not yet specified**; and its answer key, empty. Link each from the other.
+3. **Create the two documents**: the map, with Destination and Notes filled in and the fog sketched into **Not yet specified**; and its answer key, empty. Link each from the other.
 4. **Write the questions you can specify now** into the map's **Open questions** — numbered from `Q1`, each with its `type:` and its `blocked by:` edges, in a single edit. Numbers are yours to assign, so nothing needs creating before it can be referenced. Everything you can't yet specify stays in the fog.
 5. **Fire the research subagents.** For each `research` question, mark it `claimed` and spin up a subagent that calls the Skill tool with "research" to resolve it in parallel, capturing its findings on a throwaway `research/<name>` branch. Each subagent **appends its own answer-key entry** when it finishes, and **does not touch the map** — appending entries concurrently is safe, editing the map concurrently is not. The next session reconciles the map (step 1 below).
 6. Stop — charting is one session's work; it hand-answers nothing.
