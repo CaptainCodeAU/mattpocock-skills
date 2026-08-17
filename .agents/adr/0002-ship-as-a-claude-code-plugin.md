@@ -39,3 +39,15 @@ Verified 2026-08-05, on Claude Code 2.1.222, against the live listing:
 - `claude plugin details mattpocock-skills` then reports version 1.2.0 and loads the promoted skills.
 - The listing's `source` is `{"source": "url", "url": "https://github.com/mattpocock/skills.git", "sha": …}` — the **sha is pinned**, so a release reaches installed users when that pin moves, not the moment we tag. At the time of writing the pin sits two commits behind `main`, which is why it lists 22 skills rather than the 24 in `plugin.json`.
 - The in-session `/plugin install mattpocock-skills` was **not** exercised — `/plugin` is unavailable in headless (`claude -p`) sessions. It runs the same resolver as the CLI, and the documented example form is `/plugin install <name>@claude-plugins-official`.
+
+## Update, 2026-08-17 — this fork
+
+This repository is now a personal fork, [CaptainCodeAU/mattpocock-skills](https://github.com/CaptainCodeAU/mattpocock-skills). Everything above describes the **upstream** distribution, not this one: changes here stay here, nothing is contributed back, and nothing is published.
+
+What that does to this ADR's invariants:
+
+- The official-marketplace listing is upstream's and is **not** an install route for this fork. `claude plugins install mattpocock-skills` fetches upstream's code, which is the accident the rename below exists to prevent.
+- `.claude-plugin/marketplace.json` is no longer "a fallback, not documented to users" — it is now **the** install route. The fork is added as a marketplace directly. See [install-block.md](../install-block.md).
+- The plugin and marketplace were renamed to **`cc-skills`** and **`captaincodeau`**, so the fork cannot register a colliding `mattpocock-skills` beside the official listing. Installed skills carry a `cc-skills:` prefix.
+- The release workflow was deleted, so the invariant that `plugin.json`'s `version` tracks `package.json`'s is no longer enforced by CI. `node scripts/sync-plugin-version.mjs --check` still verifies it on demand.
+- The deferred native Codex plugin is moot here. skills.sh serves Codex for upstream; this fork uses `scripts/link-skills.sh` or a manual copy.

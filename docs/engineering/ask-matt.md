@@ -69,7 +69,9 @@ No. Three separate proposals have asked for a router that reads your local `skil
 
 **It told me to edit a SKILL.md.**
 
-That advice is often correct and rarely durable. Someone asked it how to make [implement](https://aihero.dev/skills-implement) close tickets, got told to add a line to the skill, and immediately spotted the problem: `npx skills update` overwrites the file, and the plugin install is read-only. Put standing behaviour in your own `CLAUDE.md` or `AGENTS.md`, or say it in the invocation. Prompt-level adaptations survive updates — pointing the flow at Linear instead of GitHub, or asking it which open tickets could run in parallel, are both things people do this way.
+That advice is often correct, and on a managed install it is not durable: `npx skills update` overwrites the file, and a plugin install is read-only. Someone asked how to make [implement](https://aihero.dev/skills-implement) close tickets, got told to add a line to the skill, and immediately spotted that problem.
+
+On this fork the calculus inverts — you own the source, so editing a `SKILL.md` here *is* the durable fix, and pushing it is how it reaches your installs. What still belongs in your own `CLAUDE.md` or `AGENTS.md`, or in the invocation, is anything you would not want baked into the skill for every project: pointing the flow at Linear instead of GitHub, or asking which open tickets could run in parallel.
 
 **It named a skill I don't have, or missed one I do.**
 
