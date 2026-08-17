@@ -85,8 +85,9 @@ One long-standing complaint says yes, in these words: *"having a skill to set up
 
 - `docs/agents/issue-tracker.md` and `docs/agents/domain.md` exist, plus `triage-labels.md` if `triage` is installed.
 - An `## Agent skills` section appears in the instruction file your harness actually reads, with a one-line summary pointing at each of those files.
-- The tracker it proposed matches the remote you really use, and the label strings match labels that really exist in your tracker.
-- Afterwards, `/to-tickets` publishes without asking you where issues live, and `/triage` applies labels rather than inventing them.
+- The tracker it proposed is where you actually track work — your `git remote` on GitHub or GitLab, or `.scratch/` if you picked local markdown.
+- On a real tracker, the label strings in `triage-labels.md` name labels that exist there. On local markdown there are no labels to match: triage records state as a `Status:` line instead.
+- Afterwards, `/to-tickets` publishes without asking you where issues live, and `/triage` applies your existing label strings — or writes that `Status:` line — rather than inventing anything.
 - Nothing in the skill files themselves changed. If setup edited a `SKILL.md`, something went wrong.
 
 ## Where it fits

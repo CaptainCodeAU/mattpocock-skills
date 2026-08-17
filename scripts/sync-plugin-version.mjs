@@ -1,6 +1,14 @@
 #!/usr/bin/env node
 // Copies package.json's version into .claude-plugin/plugin.json.
 // Runs as part of `npm run version`, immediately after `changeset version`.
+//
+// On this fork there is no release workflow, so the usual path is the other
+// one: bump package.json's version by hand and run this standalone. A plugin
+// install only picks up a change when plugin.json's version moves — pushing
+// alone leaves `claude plugin update` reporting "already at the latest".
+// Avoid `changeset version` here; it would consume the pending changesets and
+// rewrite CHANGELOG.md.
+//
 // With --check it changes nothing and exits 1 if the two versions differ.
 
 import { readFileSync, writeFileSync } from "node:fs";
