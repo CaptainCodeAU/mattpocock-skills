@@ -29,7 +29,7 @@ An effort is **two** documents, and no more. The **map** holds what is still ope
 
 That split is what keeps the map cheap to load however long the effort runs. **The answer key is the source of truth for what has been answered**; the map's open-question list is a cache of what has not. A question is answered when, and only when, it has an answer-key entry.
 
-**Whether the two are issues or files, and how an entry is appended, is tracker-specific.** Consult the tracker doc's "Wayfinding operations" section for how _this_ repo expresses them. If no tracker has been provided, say so, name `/setup-matt-pocock-skills` as the way to configure one, and carry on with the local-markdown tracker unless the user redirects you — a repo with no tracker configured still gets a map.
+**Whether the two are issues or files, and how an entry is appended, is tracker-specific.** Consult the tracker doc's "Wayfinding operations" section for how _this_ repo expresses them. If no tracker has been provided, say so, name `/setup-matt-pocock-skills` as the way to configure one, and carry on with the local-markdown tracker unless the user redirects you — a repo with no tracker configured still gets a map. Its two documents are `.scratch/<effort>/map.md` and `.scratch/<effort>/answers.md`, which is enough to start without reading a tracker doc at all. Add `.scratch/` to the repo's `.gitignore` before writing into it, and say plainly that a local map stays on this machine and reaches no one else.
 
 ### The map body
 
