@@ -22,52 +22,56 @@ If you want to keep up with changes to these skills, and any new ones I create, 
 
 [Sign Up To The Newsletter](https://www.aihero.dev/s/skills-newsletter)
 
-## Installation (30-second setup)
+## Installation
 
-Two ways in, two philosophies. **The [Claude Code plugin](https://code.claude.com/docs/en/plugins)** installs the whole set as a managed, read-only bundle that updates when I ship — you subscribe rather than fork. **[skills.sh](https://skills.sh/mattpocock/skills)** copies editable skill files into your project, so you can hack on them and make them your own. Pick one — installing both leaves you with every skill twice.
+> [!IMPORTANT]
+> This is a **personal fork**, and it installs as its own marketplace. Do **not** run `claude plugins install mattpocock-skills` — that resolves against Claude Code's official marketplace and gives you the upstream set, not this one.
 
-### 1. Get the skills
-
-<details>
-<summary><strong>Claude Code</strong></summary>
+### 1. Add this repo as a marketplace, then install the plugin
 
 ```bash
-claude plugins install mattpocock-skills
+claude plugin marketplace add CaptainCodeAU/mattpocock-skills
+claude plugin install cc-skills@captaincodeau
 ```
 
 Or, from inside a session:
 
 ```
-/plugin install mattpocock-skills
+/plugin marketplace add CaptainCodeAU/mattpocock-skills
+/plugin install cc-skills@captaincodeau
 ```
 
-It's in Claude Code's official marketplace, so there's nothing to add first, and updates arrive automatically.
+Installing at user scope makes the skills available in every project. They arrive prefixed **`cc-skills:`** — so `cc-skills:wayfinder`, `cc-skills:tdd` — which is what keeps them distinguishable from the upstream set at a glance.
 
-</details>
+To pick up your own changes after pushing to this fork:
+
+```bash
+claude plugin update cc-skills@captaincodeau
+```
 
 <details>
 <summary><strong>Codex, and other agents</strong></summary>
 
+The plugin is Claude Code only. Elsewhere, the [skills.sh](https://skills.sh) installer takes an `owner/repo`, so this fork should work in place of the upstream one:
+
 ```bash
-npx skills@latest add mattpocock/skills
+npx skills@latest add CaptainCodeAU/mattpocock-skills
 ```
 
-Pick the skills you want, and which coding agents to install them on. **The installer lets you choose which skills to take — make sure `setup-matt-pocock-skills` is one of them.**
-
-A native Codex plugin is on the roadmap — see [`.agents/adr/0002-ship-as-a-claude-code-plugin.md`](./.agents/adr/0002-ship-as-a-claude-code-plugin.md).
+**Untested against this fork** — verify it pulls from here and not upstream before relying on it.
 
 </details>
 
 <details>
-<summary><strong>For tinkerers</strong></summary>
+<summary><strong>Local symlinks, for hacking on the skills themselves</strong></summary>
 
-Use the same installer, on any agent — including Claude Code:
+`scripts/link-skills.sh` symlinks every skill in this repo into `~/.claude/skills` and `~/.agents/skills`, straight out of your working copy — so edits take effect immediately and `git pull` is the whole update story.
 
 ```bash
-npx skills@latest add mattpocock/skills
+scripts/link-skills.sh
 ```
 
-It writes the skills into your repo as ordinary files you own and can edit. Nothing updates behind your back; pull my latest changes when you want them with `npx skills update`.
+Two differences from the plugin: skills arrive **unprefixed**, mixed in with anything else in those directories; and it links **all** of them, including `in-progress/` and `misc/`, not just the promoted set the plugin ships.
 
 </details>
 
