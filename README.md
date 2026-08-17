@@ -10,7 +10,27 @@
 
 # Skills For Real Engineers
 
-[![skills.sh](https://skills.sh/b/mattpocock/skills)](https://skills.sh/mattpocock/skills)
+> [!IMPORTANT]
+> **This is a personal fork of [mattpocock/skills](https://github.com/mattpocock/skills).**
+>
+> Changes made here stay here — nothing is contributed upstream, and this repo is published to no public marketplace. It installs as **`cc-skills@captaincodeau`**, and its skills arrive prefixed `cc-skills:`.
+>
+> Do **not** run `claude plugins install mattpocock-skills`. That resolves against Claude Code's official marketplace and installs the **upstream** set instead of this one. See [Installation](#installation).
+
+## How this fork differs
+
+|                            | Upstream                                                          | This fork                                                                              |
+| -------------------------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| A `wayfinder` effort is…    | a map issue **plus one child issue per decision ticket**          | **two documents** — a map of open questions, and an append-only answer key              |
+| Its unit is…                | a *decision ticket*, which was a real child issue                 | a *question* — numbered, stable forever, and never an issue of its own                  |
+| Blocking works by…          | native sub-issues, dependency links, assignee-as-claim            | a `blocked by:` field read out of the map, so every tracker behaves identically         |
+| `.scratch/` is…             | unspecified                                                       | **gitignored** — local and disposable, and added to `.gitignore` before the first write |
+| The plugin is…              | `mattpocock-skills`, in Claude Code's official marketplace        | `cc-skills`, in a `captaincodeau` marketplace built from this repo                      |
+| Releasing is…               | changesets plus a GitHub Actions release workflow                  | no workflow — the version is bumped by hand, which is what makes an install see a change |
+
+The wayfinder change accepts one real cost: **the frontier no longer renders in the tracker's UI.** Native blocking existed precisely so a human could see what was takeable without opening the map. That trade is stated in the skill and on its docs page rather than buried here.
+
+`LICENSE` keeps the original copyright, as MIT requires. `CHANGELOG.md` and the ADRs are kept as upstream's historical record; where an ADR describes a decision that no longer holds here, an appended note says so. Everything below — apart from **Installation** and the `wayfinder` entry in the Reference list — is upstream's README, in the original author's voice.
 
 My agent skills that I use every day to do real engineering - not vibe coding.
 
