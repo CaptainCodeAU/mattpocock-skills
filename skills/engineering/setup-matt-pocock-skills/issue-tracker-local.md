@@ -4,6 +4,7 @@ Issues and specs for this repo live as markdown files in `.scratch/`.
 
 ## Conventions
 
+- **`.scratch/` is gitignored.** Everything under it is local and disposable, the way a spec is — it records what was known at the time, and a stale one is worse than none. Add `.scratch/` to `.gitignore` if it isn't there yet. The consequence is worth stating plainly: nothing here reaches a collaborator, so where a skill calls its artifact a "shared" map, it is only shared on a real tracker. Reach for GitHub or GitLab when more than one person needs to see it.
 - One feature per directory: `.scratch/<feature-slug>/`
 - The spec is `.scratch/<feature-slug>/spec.md`
 - Implementation issues are one file per ticket at `.scratch/<feature-slug>/issues/<NN>-<slug>.md`, numbered from `01` — never a single combined tickets file

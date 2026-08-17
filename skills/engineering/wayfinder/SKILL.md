@@ -127,13 +127,15 @@ Ruling something out of scope is a scoping act, not a step on the route. When a 
 
 ## Invocation
 
-Two modes. Either way, **never answer more than one question per session** — with the exception of research questions.
+Two modes, chosen by what the user passes. Either way, **never answer more than one question per session** — with the exception of research questions.
+
+**Invoked bare, with neither an idea nor a map?** Establish three facts, then stop: whether a map already exists for this repo (the tracker doc says where to look), whether a tracker is configured, and which mode the user wants. Keep it to one directory listing or one query — three facts, not a survey of the repo. Then say which mode needs which input, and ask for it.
 
 ### Chart the map
 
 User invokes with a loose idea.
 
-1. **Name the destination.** Call the Skill tool twice, for "grilling" and "domain-modeling", to pin down what this map is finding its way to — the spec, decision, or change. The destination fixes the scope, so it's settled first.
+1. **Name the destination.** Call the Skill tool twice, for "grilling" and "domain-modeling", to pin down what this map is finding its way to — the spec, decision, or change. The destination fixes the scope, so it's settled first. **Done when** the destination came out of a grilling round — questions in grilling's own `❓` / `➡️` shape, each carrying a recommendation. A destination you asked for in your own words instead means `grilling` never loaded: load it and re-ask.
 2. **Map the frontier.** Grill again, **breadth-first** this time: fan out across the whole space rather than deep on any one thread, surfacing the open decisions and the first steps takeable now. **If this surfaces no fog** — the way to the destination is already clear, the whole journey small enough for one session — you don't need a map. Stop and ask the user how they'd like to proceed.
 3. **Create the two documents**: the map, with Destination and Notes filled in and the fog sketched into **Not yet specified**; and its answer key, empty. Link each from the other.
 4. **Write the questions you can specify now** into the map's **Open questions** — numbered from `Q1`, each with its `type:` and its `blocked by:` edges, in a single edit. Numbers are yours to assign, so nothing needs creating before it can be referenced. Everything you can't yet specify stays in the fog.
