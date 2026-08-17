@@ -1,5 +1,5 @@
 ---
-"mattpocock-skills": minor
+"cc-skills": minor
 ---
 
 **Breaking:** a `/wayfinder` effort is now **two issues** — a **map** and an **answer key** — instead of one map plus a child issue per unit. The unit is a **question**, and "decision ticket" is retired.
