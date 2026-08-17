@@ -49,7 +49,7 @@ Related: running the skill repeatedly across unrelated changes in one repo tends
 ## Common questions
 
 **Should I use this or `/wayfinder`?**
-Scope decides it. Use this for anything you can settle in one session; use [wayfinder](https://aihero.dev/skills-wayfinder) when the effort is too big to hold in one, and it charts the work as a map of decision [tickets](https://www.aihero.dev/ai-coding-dictionary/ticket) first. Wayfinder is slower and denser, and reaching for it on a well-scoped feature is the common mistake. It does not replace this skill — it can drop into a grilling session for the parts of the map that suit one.
+Scope decides it. Use this for anything you can settle in one session; use [wayfinder](https://aihero.dev/skills-wayfinder) when the effort is too big to hold in one, and it charts the work as a map of open questions first. Wayfinder is slower and denser, and reaching for it on a well-scoped feature is the common mistake. It does not replace this skill — it can drop into a grilling session for the parts of the map that suit one.
 
 **It ran, but no `CONTEXT.md` and no ADRs appeared.**
 Two known causes. The mundane one: nothing qualified. ADRs need all three gates, and a session about a change with no new vocabulary genuinely has nothing to write. The real bug: when the skill runs inside another orchestration layer — a spec-driven-development wrapper, a multi-agent framework, a rule that invokes it as a step in someone else's pipeline — the file-writing half is reported to silently not happen, while the interview still runs. This is filed and unfixed. If you are in that setup, check the working directory before you trust the session's output.

@@ -10,7 +10,7 @@ Type `/prototype`, or the [agent](https://www.aihero.dev/ai-coding-dictionary/ag
 
 Reach for it the moment you hit a question you can't settle by talking — a state machine whose edge cases you can't hold in your head, a screen you can't picture until you see three versions side by side. [Grilling](https://www.aihero.dev/ai-coding-dictionary/grilling) sessions balloon on exactly these questions: the agent rephrases, you guess, and the scope grows to fill the uncertainty. Stop grilling, build the throwaway version, look at it, then answer in one line. If instead something already built is misbehaving and you want to know why, use [diagnosing-bugs](https://aihero.dev/skills-diagnosing-bugs) — prototyping explores what to build, not why the built thing is broken.
 
-You will also arrive here without choosing to. [wayfinder](https://aihero.dev/skills-wayfinder) files `prototype` decision [tickets](https://www.aihero.dev/ai-coding-dictionary/ticket) on its map, and working one is this skill.
+You will also arrive here without choosing to. [wayfinder](https://aihero.dev/skills-wayfinder) puts `prototype` questions on its map, and working one is this skill.
 
 ## Two branches
 
@@ -62,6 +62,6 @@ It can be, if you prototype questions you could have answered by talking, or let
 
 `prototype` is a **reach-for-it-anytime standalone** — you drop into it to settle one design question, then drop back out — and it is also machinery another skill runs on.
 
-Its largest consumer is [wayfinder](https://aihero.dev/skills-wayfinder). A wayfinder map is made of **decision tickets**, and `prototype` is one of the four types a ticket can be: the one used when the blocking question is "how should this look" or "how should it behave", which no amount of discussion resolves. Wayfinder raises the fidelity of a foggy discussion by making something concrete to react to, and this skill is how that concrete thing gets built. A prototype ticket is resolved by the answer, and the prototype is linked from the map as an asset.
+Its largest consumer is [wayfinder](https://aihero.dev/skills-wayfinder). A wayfinder map is made of **questions**, and `prototype` is one of the four types a question can be: the one used when the blocker is "how should this look" or "how should it behave", which no amount of discussion resolves. Wayfinder raises the fidelity of a foggy discussion by making something concrete to react to, and this skill is how that concrete thing gets built. The answer settles the question, and the prototype is linked from the answer-key entry as an asset.
 
 The other neighbours are upstream and downstream of that. [grill-me](https://aihero.dev/skills-grill-me) and [grill-with-docs](https://aihero.dev/skills-grill-with-docs) answer grillable questions; the ungrillable ones come here instead, and the one-line answer goes back into the interview. Downstream, a validated state model or UI direction becomes settled input for [to-spec](https://aihero.dev/skills-to-spec), which can inline the decision-rich snippet the prototype produced rather than describing it in prose. For anything else, [ask-matt](https://aihero.dev/skills-ask-matt) routes you over the whole set.
