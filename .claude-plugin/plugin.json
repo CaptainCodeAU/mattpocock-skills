@@ -1,6 +1,6 @@
 {
   "name": "cc-skills",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Personal fork of Matt Pocock's engineering skills — grilling, spec/ticket flows, TDD, code review, domain modelling and more.",
   "author": {
     "name": "CaptainCodeAU",

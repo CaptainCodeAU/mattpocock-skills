@@ -1,6 +1,6 @@
 {
   "name": "cc-skills",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "private": true,
   "description": "Personal fork of Matt Pocock's agent skills for real engineering",
   "repository": {
