@@ -20,7 +20,7 @@ You invoke this by typing `/triage` and then describing what you want in plain l
 
 ## Prerequisites
 
-`triage` reads and writes your issue tracker, so [setup-matt-pocock-skills](https://aihero.dev/skills-setup-matt-pocock-skills) has to have configured that tracker and its label vocabulary first. The role names below are **canonical**; the label strings in your tracker may differ, and the mapping is what setup provides. If your tracker already uses the canonical names exactly, there is nothing to map and nothing to set up.
+`triage` reads and writes your issue tracker. With no tracker configured, it defaults to the local-markdown convention — a `Status:` line near the top of each issue file, using the canonical role names directly, with nothing to map. If [setup-matt-pocock-skills](https://aihero.dev/skills-setup-matt-pocock-skills) has configured a real tracker for this repo, the role names below map to whatever label strings that step set up.
 
 The tracker config also decides whether external pull requests count as a request surface, and who counts as external. That flag defaults to off and is no longer a setup question — flip it in `docs/agents/issue-tracker.md` if you want PRs in scope.
 

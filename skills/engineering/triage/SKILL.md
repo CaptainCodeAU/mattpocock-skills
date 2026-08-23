@@ -40,7 +40,7 @@ For a PR, the same states read against the attached code: `ready-for-agent` mean
 
 Every triaged issue should carry exactly one category role and one state role. If state roles conflict, flag it and ask the maintainer before doing anything else.
 
-These are canonical role names — the actual label strings used in the issue tracker may differ. The mapping should have been provided to you. If not, tell the user to run `/setup-matt-pocock-skills`.
+These are canonical role names — the actual label strings used in the issue tracker may differ. If no mapping has been provided, say so, name `/setup-matt-pocock-skills` as the way to configure one, and carry on with the local-markdown tracker's convention: issues live as files under `.scratch/<feature-slug>/issues/`, and triage state is a `Status:` line near the top of the file, holding the canonical role name directly — there is nothing to map on local markdown. Mention that default once, in passing, and let the user redirect if they care. Add `.scratch/` to the repo's `.gitignore` before writing into it, and say plainly that local triage notes stay on this machine and reach no one else.
 
 State transitions: an unlabeled issue normally goes to `needs-triage` first; from there it moves to `needs-info`, `ready-for-agent`, `ready-for-human`, or `wontfix`. `needs-info` returns to `needs-triage` once the reporter replies. The maintainer can override at any time — flag transitions that look unusual and ask before proceeding.
 
