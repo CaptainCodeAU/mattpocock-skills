@@ -1,6 +1,6 @@
 ## What it does
 
-`to-spec` turns the conversation you have just had into a **[spec](https://www.aihero.dev/ai-coding-dictionary/spec)**, and publishes it to your issue tracker as a single issue.
+`to-spec` turns the conversation you have just had into a **[spec](https://www.aihero.dev/ai-coding-dictionary/spec)**, and publishes it as a single document — a real tracker issue, or a local file under `.scratch/` if no tracker is configured.
 
 It does not interview you. By the time you reach for it the deciding is already done, so it synthesises what is known — from the thread, from the codebase, from your `CONTEXT.md` and ADRs — rather than opening a fresh round of questions. The spec is a record of decisions already made, not a place where new ones get made.
 
@@ -19,7 +19,7 @@ Reach for it when the build is too big for one agent [session](https://www.aiher
 
 ## Prerequisites
 
-`to-spec` publishes the spec as an issue, so [setup-matt-pocock-skills](https://aihero.dev/skills-setup-matt-pocock-skills) must have configured a tracker and the triage-label vocabulary for this repo first. Either kind works: a real tracker like GitHub, or local markdown files under `.scratch/`, which is supported out of the box.
+`to-spec` writes to `.scratch/<feature-slug>/spec.md` by default, so it works with no setup at all. If [setup-matt-pocock-skills](https://aihero.dev/skills-setup-matt-pocock-skills) has configured a real tracker like GitHub for this repo, the spec publishes there as an issue instead, carrying the triage-label vocabulary that step set up.
 
 ## The spec is a decision record
 

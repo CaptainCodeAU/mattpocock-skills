@@ -1,12 +1,12 @@
 ---
 name: to-spec
-description: Turn the current conversation into a spec and publish it to the project issue tracker — no interview, just synthesis of what you've already discussed.
+description: Turn the current conversation into a spec and publish it to the project's issue tracker — real or local — no interview, just synthesis of what you've already discussed.
 disable-model-invocation: true
 ---
 
 This skill takes the current conversation context and codebase understanding and produces a spec. Do NOT interview the user — just synthesize what you already know.
 
-The issue tracker and triage label vocabulary should have been provided to you. If not, tell the user to run `/setup-matt-pocock-skills`.
+Whether the spec becomes an issue or a file is tracker-specific. If no tracker has been provided, say so, name `/setup-matt-pocock-skills` as the way to configure one, and carry on publishing to the local-markdown tracker — a repo with no tracker configured still gets a spec. Mention that default once, in passing, and let the user redirect if they care: it is a default rather than an opening question, and nothing is written until step 3, so the choice can wait. Its document is `.scratch/<feature-slug>/spec.md`, which is enough to start without reading a tracker doc at all. Add `.scratch/` to the repo's `.gitignore` before writing into it, and say plainly that a local spec stays on this machine and reaches no one else.
 
 ## Process
 
