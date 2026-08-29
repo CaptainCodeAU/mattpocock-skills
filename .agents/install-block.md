@@ -14,7 +14,7 @@ This repo is a **personal fork** of [mattpocock/skills](https://github.com/mattp
 
 These were deliberately renamed away from upstream's. Left as they were, adding this repo as a marketplace would register `mattpocock-skills@mattpocock` beside the official listing's `mattpocock-skills@claude-plugins-official` — the same plugin name under a near-identical suffix, making an unqualified `/plugin install mattpocock-skills` ambiguous and an accidental upstream install easy. **Never rename them back.**
 
-## Claude Code — the plugin
+## Claude Code: the plugin
 
 <canonical-block name="claude-code">
 
