@@ -75,7 +75,7 @@ claude plugin update cc-skills@captaincodeau
 The plugin is Claude Code only. Elsewhere, the [skills.sh](https://skills.sh) installer takes an `owner/repo`, so this fork should work in place of the upstream one:
 
 ```bash
-npx skills@latest add CaptainCodeAU/mattpocock-skills
+pnpm dlx skills@latest add CaptainCodeAU/mattpocock-skills
 ```
 
 **Untested against this fork** — verify it pulls from here and not upstream before relying on it.

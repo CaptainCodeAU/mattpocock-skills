@@ -37,5 +37,5 @@ Install at user scope so the skills reach every project. They arrive prefixed `c
 ## Not the install story
 
 - **`claude plugins install mattpocock-skills`** installs the **upstream** set from Claude Code's official marketplace. This is the one command that must never appear in this repo as an instruction.
-- **`npx skills@latest add mattpocock/skills`** likewise pulls upstream. The fork equivalent, `npx skills@latest add CaptainCodeAU/mattpocock-skills`, is **untested here** — verify it resolves to this repo before documenting it as a route.
+- **`pnpm dlx skills@latest add mattpocock/skills`** likewise pulls upstream (never `npx`: npm is refused on these machines). The fork equivalent, `pnpm dlx skills@latest add CaptainCodeAU/mattpocock-skills`, is **untested here** — verify it resolves to this repo before documenting it as a route.
 - **`scripts/link-skills.sh`** symlinks every skill from the working copy into `~/.claude/skills` and `~/.agents/skills`. It is a dev convenience for hacking on the skills themselves, not a distribution: skills land unprefixed, and it links all of them rather than the promoted set the plugin ships.
